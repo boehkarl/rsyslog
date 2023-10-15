@@ -22,7 +22,7 @@
 -A INPUT -i eth0 -p tcp --dport 9997 -m state --state NEW,ESTABLISHED -j ACCEPT
 -A INPUT -i eth0 -p tcp --dport 9998 -m state --state NEW,ESTABLISHED -j ACCEPT
 -A INPUT -i eth0 -p tcp --dport 601 -m state --state NEW,ESTABLISHED -j ACCEPT
--A INPUT -i eth0 -p udp --port 514 -m state --state NEW,ESTABLISHED -j ACCEPT
+-A INPUT -i eth0 -p udp --dport 514 -m state --state NEW,ESTABLISHED -j ACCEPT
 
 # Kill SSH traffic
 -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j DROP
