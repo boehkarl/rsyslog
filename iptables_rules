@@ -1,11 +1,12 @@
 #Iptables rules for CentOS6 central log server
+*filter
 # Drop all input and forward
 -P INPUT DROP
 -P FORWARD DROP
 
 # ensure loopback is good 
 -A INPUT -i lo -j ACCEPT
--A OUTPUT -i lo -j ACCEPT
+-A OUTPUT -o lo -j ACCEPT
 
 # HTTP & HTTPS rules 
 -A INPUT -i eth0 -p tcp --dport 80 -m state --state NEW,ESTABLISHED -j ACCEPT
